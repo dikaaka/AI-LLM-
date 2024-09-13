@@ -258,7 +258,7 @@ def get_daily_trx(stock, start_date: str, end_date: str, generate_chart: bool = 
 @tool
 def get_stock_info(classifications: str, n_stock: int, sub_sector: str) -> str:
     """
-    Retrieves information about stocks within a specific sub-sector, classified by growth indicators such as earnings or revenue.
+    Retrieves information about growth indicators such as earnings or revenue within a specific sub-sector
 
     Args:
         classifications (str): The classification type for stock growth. Supported options are:
@@ -284,7 +284,7 @@ def get_stock_info(classifications: str, n_stock: int, sub_sector: str) -> str:
             The function will find the closest match if the input is not an exact match.
 
     Returns:
-        str: A summary of the top stocks in the specified sub-sector and classification, including relevant growth metrics.
+        str: A summary of the top stocks in the specified sub-sector based on earnings or revenue.
     """
     valid_classifications = ['top_earnings_growth_gainers',
                              'top_earnings_growth_losers',
