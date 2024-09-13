@@ -309,9 +309,9 @@ def get_daily_trx(stock, start_date: str, end_date: str, generate_chart: bool = 
 #     return get_info(url)
 
 @tool 
-def get_listing_perform(stock: str) -> str:
+def get_ipo_performance(stock: str) -> str:
     """
-    Retrieve information about a company's performance since its IPO (Initial Public Offering) listing date.
+    Retrieve information about a company's performance since its IPO (Initial Public Offering).
 
     This function fetches data on the stock's performance history from the IPO listing date using an external API, providing insights into how the company has performed in the market over time.
 
@@ -359,7 +359,7 @@ def process_data_with_llm(query):
 tools = [get_company_overview,
          get_top_companies_by_trx_volume,
          get_daily_trx,
-         get_listing_perform,
+         get_ipo_performance
          process_data_with_llm
          ]
 
