@@ -1,6 +1,5 @@
 import os
 import requests
-from dotenv import load_dotenv
 from typing import Dict
 import json
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
