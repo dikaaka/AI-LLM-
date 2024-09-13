@@ -64,7 +64,7 @@ def get_company_overview(stock: str, section: str='overview') -> str:
 
     Args:
         stock (str): The stock symbol or code representing the company.
-        section (str): The section of the company report to retrieve.
+        section (str): The section of the company report to retrieve (e.g: overview, dividend, management, peers, financials, valuation, ownership).
 
     Returns:
         str: A detailed summary of the requested company report section for the specified stock.
@@ -359,7 +359,7 @@ def process_data_with_llm(query):
 tools = [get_company_overview,
          get_top_companies_by_trx_volume,
          get_daily_trx,
-         get_ipo_performance
+         get_ipo_performance,
          process_data_with_llm
          ]
 
