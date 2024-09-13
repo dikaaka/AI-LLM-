@@ -21,7 +21,6 @@ DateTime==5.5
 debugpy==1.8.5
 decorator==5.1.1
 distro==1.9.0
-dotenv==0.0.5
 executing==2.0.1
 fonttools==4.53.1
 frozenlist==1.4.1
