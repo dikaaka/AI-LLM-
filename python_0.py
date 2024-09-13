@@ -255,59 +255,59 @@ def get_daily_trx(stock, start_date: str, end_date: str, generate_chart: bool = 
     return json.dumps(response, indent=4)
 
 
-@tool
-def get_earning_revenue(classifications: str, n_stock: int, sub_sector: str) -> str:
-    """
-    Retrieves information about growth indicators such as earnings or revenue within a specific sub-sector
+# @tool
+# def get_earning_revenue(classifications: str, n_stock: int, sub_sector: str) -> str:
+#     """
+#     Retrieves information about growth indicators such as earnings or revenue within a specific sub-sector
 
-    Args:
-        classifications (str): The classification type for stock growth. Supported options are:
-            - 'top_earnings_growth_gainers'
-            - 'top_earnings_growth_losers'
-            - 'top_revenue_growth_gainers'
-            - 'top_revenue_growth_losers'
-            The function will find the closest match if the input is not an exact match.
+#     Args:
+#         classifications (str): The classification type for stock growth. Supported options are:
+#             - 'top_earnings_growth_gainers'
+#             - 'top_earnings_growth_losers'
+#             - 'top_revenue_growth_gainers'
+#             - 'top_revenue_growth_losers'
+#             The function will find the closest match if the input is not an exact match.
             
-        n_stock (int): The number of top stocks to retrieve based on the selected classification and sub-sector.
+#         n_stock (int): The number of top stocks to retrieve based on the selected classification and sub-sector.
         
-        sub_sector (str): The sub-sector to filter the stocks by. Supported sub-sectors include:
-            - 'banks'
-            - 'alternative-energy'
-            - 'apparel-luxury-goods'
-            - 'automobiles-components'
-            - 'basic-materials'
-            - 'consumer-services'
-            - 'financing-service'
-            - 'food-beverage'
-            - 'food-staples-retailing'
-            - 'healthcare-equipment-providers'
-            The function will find the closest match if the input is not an exact match.
+#         sub_sector (str): The sub-sector to filter the stocks by. Supported sub-sectors include:
+#             - 'banks'
+#             - 'alternative-energy'
+#             - 'apparel-luxury-goods'
+#             - 'automobiles-components'
+#             - 'basic-materials'
+#             - 'consumer-services'
+#             - 'financing-service'
+#             - 'food-beverage'
+#             - 'food-staples-retailing'
+#             - 'healthcare-equipment-providers'
+#             The function will find the closest match if the input is not an exact match.
 
-    Returns:
-        str: A summary of the top stocks in the specified sub-sector based on earnings or revenue.
-    """
-    valid_classifications = ['top_earnings_growth_gainers',
-                             'top_earnings_growth_losers',
-                             'top_revenue_growth_gainers',
-                             'top_revenue_growth_losers']
-    valid_sub_sector = ['banks',
-                        'alternative-energy',
-                        'apparel-luxury-goods',
-                        'automobiles-components',
-                        'basic-materials',
-                        'consumer-services',
-                        'financing-service',
-                        'food-beverage',
-                        'food-staples-retailing',
-                        'healthcare-equipment-providers']
-    # Find the closest match to the input classification
-    closest_match_class = process.extractOne(classifications, valid_classifications)
-    closest_match_sec = process.extractOne(sub_sector, valid_sub_sector)
+#     Returns:
+#         str: A summary of the top stocks in the specified sub-sector based on earnings or revenue.
+#     """
+#     valid_classifications = ['top_earnings_growth_gainers',
+#                              'top_earnings_growth_losers',
+#                              'top_revenue_growth_gainers',
+#                              'top_revenue_growth_losers']
+#     valid_sub_sector = ['banks',
+#                         'alternative-energy',
+#                         'apparel-luxury-goods',
+#                         'automobiles-components',
+#                         'basic-materials',
+#                         'consumer-services',
+#                         'financing-service',
+#                         'food-beverage',
+#                         'food-staples-retailing',
+#                         'healthcare-equipment-providers']
+#     # Find the closest match to the input classification
+#     closest_match_class = process.extractOne(classifications, valid_classifications)
+#     closest_match_sec = process.extractOne(sub_sector, valid_sub_sector)
     
-    selected_classification = closest_match_class[0]
-    selected_sec = closest_match_sec[0]
-    url = f"https://api.sectors.app/v1/companies/top-growth/?classifications={selected_classification}&n_stock={n_stock}&sub_sector={selected_sec}"
-    return get_info(url)
+#     selected_classification = closest_match_class[0]
+#     selected_sec = closest_match_sec[0]
+#     url = f"https://api.sectors.app/v1/companies/top-growth/?classifications={selected_classification}&n_stock={n_stock}&sub_sector={selected_sec}"
+#     return get_info(url)
 
 @tool 
 def get_listing_perform(stock: str) -> str:
@@ -360,7 +360,6 @@ def process_data_with_llm(query):
 tools = [get_company_overview,
          get_top_companies_by_trx_volume,
          get_daily_trx,
-         get_earning_revenue,
          get_listing_perform,
          process_data_with_llm
          ]
@@ -396,7 +395,6 @@ prompt = ChatPromptTemplate.from_messages(
                 17. **Performing Calculations:** When calculation is required and the LLM cannot do it directly, ensure you still provide a solution by outlining the steps involved or leveraging external tools and logic to resolve the issue.
                 18. **Smart Calculation Handling:** Although the AI LLM has limitations with direct calculations, you are equipped to perform necessary calculations by breaking them down into steps or using external resources.
                 19. When you couldn't answer user questions, you should say "im not capable to answer your questions".
-                20. your only tools are get_company_overview, get_top_companies_by_trx_volume, get_daily_trx, get_earning_revenue, get_listing_perform, process_data_with_llm.
                 Deliver your answers as if you are the most knowledgeable expert on the subject, maintaining a user-friendly and approachable tone."""
                        
          ),
