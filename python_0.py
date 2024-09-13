@@ -256,7 +256,7 @@ def get_daily_trx(stock, start_date: str, end_date: str, generate_chart: bool = 
 
 
 @tool
-def get_stock_info(classifications: str, n_stock: int, sub_sector: str) -> str:
+def get_earning_revenue(classifications: str, n_stock: int, sub_sector: str) -> str:
     """
     Retrieves information about growth indicators such as earnings or revenue within a specific sub-sector
 
@@ -360,7 +360,7 @@ def process_data_with_llm(query):
 tools = [get_company_overview,
          get_top_companies_by_trx_volume,
          get_daily_trx,
-         get_stock_info,
+         get_earning_revenue,
          get_listing_perform,
          process_data_with_llm
          ]
