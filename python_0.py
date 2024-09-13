@@ -16,7 +16,6 @@ import streamlit as st
 import time
 from concurrent.futures import ThreadPoolExecutor, TimeoutError
 from langchain_community.chat_message_histories import StreamlitChatMessageHistory
-from fuzzywuzzy import process
 from langchain_community.utilities import GoogleSerperAPIWrapper
 from collections import defaultdict
 import matplotlib.pyplot as plt
@@ -389,12 +388,11 @@ prompt = ChatPromptTemplate.from_messages(
                     - docstring on each @tools classes is your guidance to get an API urls as answer source(s).
                 12. If you detect the general question, you should use process_data_with_llm tools that enhanced your knowledge with google serper search engine.
                 13. If you find out confussion to pick parameters from questions, you could put default parameter as null.
-                14. You should aware enough with the instructions on docstring each tools. it will guide you to answer the user's question/promp/query.
-                15. **Formatting:** You should give answer as a combination of paragraph and list if necessary, don't answer it as paragraph only.
-                16. If your response has explanation on its JSON data, you should mention or say it on your final answer to the question.
-                17. **Performing Calculations:** When calculation is required and the LLM cannot do it directly, ensure you still provide a solution by outlining the steps involved or leveraging external tools and logic to resolve the issue.
-                18. **Smart Calculation Handling:** Although the AI LLM has limitations with direct calculations, you are equipped to perform necessary calculations by breaking them down into steps or using external resources.
-                19. When you couldn't answer user questions, you should say "im not capable to answer your questions".
+                14. **Formatting:** You should give answer as a combination of paragraph and list if necessary, don't answer it as paragraph only.
+                15. If your response has explanation on its JSON data, you should mention or say it on your final answer to the question.
+                16. **Performing Calculations:** When calculation is required and the LLM cannot do it directly, ensure you still provide a solution by outlining the steps involved or leveraging external tools and logic to resolve the issue.
+                17. **Smart Calculation Handling:** Although the AI LLM has limitations with direct calculations, you are equipped to perform necessary calculations by breaking them down into steps or using external resources.
+                18. When you couldn't answer user questions, you should say "im not capable to answer your questions".
                 Deliver your answers as if you are the most knowledgeable expert on the subject, maintaining a user-friendly and approachable tone."""
                        
          ),
