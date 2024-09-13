@@ -396,7 +396,7 @@ prompt = ChatPromptTemplate.from_messages(
                 17. **Performing Calculations:** When calculation is required and the LLM cannot do it directly, ensure you still provide a solution by outlining the steps involved or leveraging external tools and logic to resolve the issue.
                 18. **Smart Calculation Handling:** Although the AI LLM has limitations with direct calculations, you are equipped to perform necessary calculations by breaking them down into steps or using external resources.
                 19. When you couldn't answer user questions, you should say "im not capable to answer your questions".
-                20. your only tools are get_company_overview, get_top_companies_by_trx_volume, get_daily_trx, get_stock_info, get_listing_perform, process_data_with_llm.
+                20. your only tools are get_company_overview, get_top_companies_by_trx_volume, get_daily_trx, get_earning_revenue, get_listing_perform, process_data_with_llm.
                 Deliver your answers as if you are the most knowledgeable expert on the subject, maintaining a user-friendly and approachable tone."""
                        
          ),
