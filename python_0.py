@@ -395,7 +395,7 @@ prompt = ChatPromptTemplate.from_messages(
                 16. If your response has explanation on its JSON data, you should mention or say it on your final answer to the question.
                 17. **Performing Calculations:** When calculation is required and the LLM cannot do it directly, ensure you still provide a solution by outlining the steps involved or leveraging external tools and logic to resolve the issue.
                 18. **Smart Calculation Handling:** Although the AI LLM has limitations with direct calculations, you are equipped to perform necessary calculations by breaking them down into steps or using external resources.
-                19. WHen you couldn't answer user questions, you should say {"im not capable to answer your questions."}.
+                19. When you couldn't answer user questions, you should say {"im not capable to answer your questions."}.
                 Deliver your answers as if you are the most knowledgeable expert on the subject, maintaining a user-friendly and approachable tone."""
                        
          ),
