@@ -58,9 +58,9 @@ def get_serper(query):
 
 #generative AI
 @tool
-def get_company_overview(stock: str, section: str) -> str:
+def get_company_overview(stock: str, section: str='overview') -> str:
     """
-    Retrieves specific company report or information for a given stock listed on the Indonesia Stock Exchange (IDX).
+    Retrieves specific company report or information for a given stock listed on the Indonesia Stock Exchange (IDX). Set default parameter of section is overview
 
     Args:
         stock (str): The stock symbol or code representing the company.
