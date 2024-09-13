@@ -24,9 +24,9 @@ import seaborn as sns
 
 #retrieve the data trough API
 # load_dotenv() # load your .env file
-GROQ_API_KEY = st.secrets("GROQ_API_KEY")
-SECTORS_API_KEY = st.secrets("SECTORS_API_KEY")
-SERPER_API_KEY = st.secrets("SERPER_API_KEY")
+GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
+SECTORS_API_KEY = st.secrets["SECTORS_API_KEY"]
+SERPER_API_KEY = st.secrets["SERPER_API_KEY"]
 
 def get_info(url: str) -> dict:
     headers = {"Authorization": SECTORS_API_KEY}
